@@ -108,5 +108,5 @@ def upload_data(commit_message="Subida de datos"):
 
 if __name__ == '__main__':
     os.makedirs(DATA_PATH, exist_ok=True) # Crear la carpeta 'data' si no existe
-    download_forms_results()
+    # download_forms_results()
     upload_data()
