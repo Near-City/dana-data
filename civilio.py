@@ -3,11 +3,15 @@ from datetime import datetime
 import json
 import pandas as pd
 import os
+import git
 
 DATA_PATH = 'data/'
 BASE_URL = 'https://ctav.civilio.net/api'
 USERNAME = 'jcarot@eio.upv.es'
 PASSWORD = '123456789'
+
+repo_path = os.path.dirname(os.path.abspath(__file__))
+repo = git.Repo(repo_path)
 
 def _flatten_json(json_data, prefix=''):
     items = {}
@@ -92,8 +96,17 @@ def download_forms_results():
 
     df.to_csv(filename_csv, index=False)
 
+def upload_data(commit_message="Subida de datos"):
+    # Subir los datos a un repositorio de GitHub
+    repo.git.add(A =  True)
+    repo.index.commit(commit_message)
+    origin = repo.remote(name='origin')
+    origin.push()
+    print("Datos subidos correctamente")
+
 #endregion
 
 if __name__ == '__main__':
     os.makedirs(DATA_PATH, exist_ok=True) # Crear la carpeta 'data' si no existe
     download_forms_results()
+    upload_data()
