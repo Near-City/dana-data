@@ -4,6 +4,8 @@ import json
 import pandas as pd
 import os
 import git
+import schedule
+import time
 
 DATA_PATH = 'data/'
 BASE_URL = 'https://ctav.civilio.net/api'
@@ -63,7 +65,8 @@ def filter_tasks(tasks, status):
 
 #region Funciones principales compuestas (Descargar formularios)
 
-def download_forms_results():
+def download_forms_results(upload_to_github=True):
+    print("Descargando datos...")
     token = get_token()
     all_data = []
     groups = get_groups(token)
@@ -95,6 +98,10 @@ def download_forms_results():
     df = df[columns]
 
     df.to_csv(filename_csv, index=False)
+    print(f"Datos guardados en {filename_csv}")
+    if upload_to_github:
+        upload_data(commit_message=f"Subida de datos del día {current_datetime}")
+    
 
 def upload_data(commit_message="Subida de datos"):
     # Subir los datos a un repositorio de GitHub
@@ -107,6 +114,12 @@ def upload_data(commit_message="Subida de datos"):
 #endregion
 
 if __name__ == '__main__':
-    os.makedirs(DATA_PATH, exist_ok=True) # Crear la carpeta 'data' si no existe
-    # download_forms_results()
-    upload_data()
+    upload_data(commit_message="Prueba de subida de datos")
+
+# if __name__ == '__main__':
+#     schedule.every().day.at("20:00").do(download_forms_results) # Descargar los datos a las 20:00 cada día
+#     os.makedirs(DATA_PATH, exist_ok=True) # Crear la carpeta 'data' si no existe
+    
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(1)
