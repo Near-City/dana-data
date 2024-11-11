@@ -1,0 +1,2262 @@
+[
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "Planta baja con humedad hasta rodapie"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "comentarios": "Motor port\u00f3n coche estropeado y lavavajillas  "
+      },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      },
+      "observaciones": "Sin efloresciencias"
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false,
+      "observaciones": "Extrados cerramientos con marca nivel barro "
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "calle": "Calle Federico Garc\u00eda Lorca",
+      "numero": "11",
+      "antiguedad": "2022",
+      "nombreEdificio": "Pellicer"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Alberto Pellicer Mir",
+      "telefono": "656624610",
+      "email": "alberto.pellicer@gmail.com",
+      "dni": "73257627M"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "Calado de agua hasta rodapie"
+    },
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol Senent",
+      "telefono": "620685069"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": true, "comentarios": "Huele" },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "calle": "Blasco Ib\u00e1\u00f1ez",
+      "numero": "67",
+      "antiguedad": "1966"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "5",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Juani ",
+      "telefono": "676762869",
+      "dni": "21926488J"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "Entrada agua al zagu\u00e1n y a plantas bajas siempre cerradas  "
+    },
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol",
+      "telefono": "620685069"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol Senent",
+      "fechaInspeccion": "2024-11-11T12:48:05.409Z"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "S\u00f3tano ",
+        "comentarios": "Lodo 20 cm "
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "observaciones": "Vaciar lodo"
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": false,
+        "comentarios": "Hay bajo por abrir "
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "calle": "Calle Mauro Guillem",
+      "numero": "4",
+      "antiguedad": "1980"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "1"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Gonzalo Galiana Ricart",
+      "telefono": "654117663",
+      "email": "gonzdora@hotmaol.com",
+      "dni": "22554403M"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "Zagu\u00e1n y s\u00f3tano entrada agua "
+    },
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol",
+      "telefono": "620685069"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol Senent"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false,
+      "observaciones": "Efloresciencias en fachada"
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol Senent",
+      "telefono": "620685069"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol Senent"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Reina Beato ",
+      "telefono": "684154940",
+      "email": "reinabeato29@gmail.com",
+      "dni": "Y6479666M"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "1m de nivel entrada de agua "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": true,
+      "deformacion": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento horizontal",
+        "comentarios": "Ya han bombeado el s\u00f3tano pero sale agua por presi\u00f3n nivel fre\u00e1tico"
+      },
+      "fisuras": {
+        "danos": true,
+        "actuacion": true,
+        "zona": "Elemento vertical"
+      },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "S\u00f3tano y PL. Baja ",
+        "comentarios": "Cota inundaci\u00f3n 1,50 m  "
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "observaciones": "Se inund\u00f3, ya han bombeado el agua  "
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "Cerramientos y tabiques y forjado PL . Baja"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": true, "zona": "Maquinaria ascensor" },
+      "espaciosNoOperativos": {
+        "cocina": true,
+        "banos": false,
+        "dormitorios": false,
+        "estar": true,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "antiguedad": "2024",
+      "nombreEdificio": "Mocholi Blasco",
+      "calle": "Calle Catarroja",
+      "numero": "11"
+    },
+    "usosEdificio": {
+      "usoPlantaBaja": "1. Residencial Vivienda",
+      "usoPlantasAltas": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "2",
+      "plantasBajoRasante": "1"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Miguel Mocholi Gimeno",
+      "telefono": "617482165",
+      "email": "ml.mocholi@gmail.com",
+      "dni": "22573302"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "Le sale agua por arqueta del s\u00f3tano y por vaso piscina, por presi\u00f3n subida nivel fre\u00e1tico"
+    },
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol",
+      "telefono": "620685069"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": {
+        "danos": true,
+        "actuacion": false,
+        "comentarios": "Presi\u00f3n de nivel frestico que rezuma en s\u00f3tano y piscina",
+        "zona": "Elemento horizontal"
+      },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "Planta baja",
+        "comentarios": "Huele a humedad "
+      },
+      "instalacionesSaneamientos": {
+        "danos": false,
+        "zona": "",
+        "comentarios": ""
+      },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "zona": "Instalaci\u00f3n el\u00e9ctrica para cambiar totalmente "
+      },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": true, "zona": "Planta baja" },
+      "instalacionesSaneamientos": {
+        "danos": false,
+        "comentarios": "Esbozos "
+      },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "comentarios": "Para cambiar "
+      },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": {
+        "danos": true,
+        "comentarios": "Ascensor estropeado  "
+      },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "nombreEdificio": "",
+      "calle": "Catarroja",
+      "numero": "13",
+      "antiguedad": "1974"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "6. Aparcamiento"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "4",
+      "plantasBajoRasante": ""
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "\u00c1NGEL FERNANDO ANDR\u00c9S NARB\u00d3N",
+      "telefono": "676281070",
+      "email": "aandresnn@gmail.com",
+      "dni": "73538883V"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "El s\u00f3tano inundado y planta baja hasta 1,20 m"
+    },
+    "datosResponsableZona": { "nombre": "Antonio ", "telefono": "Llansol" },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol Senent ",
+      "fechaInspeccion": "2024-11-11T12:01:50.414Z"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "Zagu\u00e1n y ascensor",
+        "comentarios": "Ascensor estropeado"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": {
+        "danos": true,
+        "zona": "Ascensor estropeado",
+        "comentarios": "No funciona el ascensor"
+      },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      },
+      "observaciones": "Humedad en armarios de zagu\u00e1n "
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "calle": "Catarroja",
+      "numero": "15",
+      "antiguedad": "2024"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Alba Jim\u00e9nez Mart\u00ednez ",
+      "telefono": "653648029",
+      "email": "alcrisji@gmail.com",
+      "dni": "73589947K"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "1,20 m de cota inundabilidad"
+    },
+    "datosResponsableZona": {
+      "nombre": "Antonio Llansol",
+      "telefono": "620685069"
+    },
+    "tecnicos": {
+      "fechaInspeccion": "2024-11-11T13:02:37.331Z",
+      "nColegiadoTecnico1": "13422",
+      "tecnico1": "Antonio Llansol Senent"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Puertas abombadas"
+      },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": {
+        "danos": true,
+        "zona": "Vivindas y elementos comunes",
+        "comentarios": "Paredes h\u00famedas en parte inferior con aparici\u00f3n de mohos"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false, "comentarios": "" },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": false,
+        "comentarios": "No cierra puerta zagu\u00e1n"
+      },
+      "deformacion": {
+        "danos": false,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Puertas de madera cuartos contadores abombadas. No cierran"
+      },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "calle": "Sant Lluis",
+      "numero": "42",
+      "antiguedad": "2010"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "5",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Lidia Barber\u00e1n Molina",
+      "telefono": "635294393",
+      "email": "lidiabarberan_vlc@hotmail.com",
+      "dni": "49570763J"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "03506",
+      "tecnico1": "Juan R. Navarro Martinez",
+      "nColegiadoTecnico2": "03735",
+      "tecnico2": "Fernando Olba Rallo"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Puerta acceso vivienda y comercio, de madera"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Aurora Vilanova",
+      "telefono": "616516020"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": true,
+        "banos": false,
+        "dormitorios": true,
+        "estar": true,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasBajoRasante": "0",
+      "plantasSobreRasante": "2"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Paula Hungr\u00eda ",
+      "telefono": "676911823"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "6. Aparcamiento"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Tabique bajo rampa garaje"
+      },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "zona": "Garaje",
+        "comentarios": "Cuadro general sumergido"
+      },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": {
+        "danos": true,
+        "zona": "Ascensor",
+        "comentarios": "No funciona"
+      },
+      "espaciosNoOperativos": {
+        "cocina": true,
+        "banos": false,
+        "dormitorios": true,
+        "estar": true,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Port\u00f3n de garaje "
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "David Capilla ",
+      "telefono": "695923268"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda",
+      "otros": "S\u00f3tano aparcamiento "
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasBajoRasante": "1",
+      "plantasSobreRasante": "4"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Mar\u00eda Jes\u00fas Corroto Rioja",
+      "telefono": "606867183"
+    },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Medianera patio interior"
+      },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Falta port\u00f3n garaje"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "2",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Jos\u00e9 Javier Lillo",
+      "telefono": "635053437"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento horizontal",
+        "comentarios": "Hundimiento puntual pavimento"
+      },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": false,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": ""
+      },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Falta carpinter\u00eda fija de comercio"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "comentarios": "Aplacado zona z\u00f3calo golpeado por veh\u00edculo "
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Juan Manuel Puig Moliner Propietario Horno ",
+      "telefono": "640687744"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera",
+      "telefono": "670012272"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Tabique bajo rampa garaje"
+      },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": {
+        "danos": true,
+        "zona": "S\u00f3tano ",
+        "comentarios": "Da\u00f1os puntuales"
+      },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": {
+        "danos": true,
+        "zona": "Ascensor ",
+        "comentarios": "No funciona"
+      },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Puerta y port\u00f3n de acceso al garaje "
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Juan Mart\u00ednez ",
+      "telefono": "661977539"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda",
+      "otros": "Garaje en planta s\u00f3tano "
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Plurifamiliar en bloque",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "1"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Pablo Ribera ",
+      "telefono": "670012272"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "12785",
+      "tecnico1": "\u00c1ngel Garc\u00eda ",
+      "nColegiadoTecnico2": "14955",
+      "tecnico2": "Cristina Belenguer "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": true,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": {
+        "danos": true,
+        "actuacion": false,
+        "comentarios": "Pilares est\u00e1n con hierro visto y ahora oxidados. Merece visita.",
+        "zona": "Estructura"
+      },
+      "desprendimientos": { "danos": true, "actuacion": false },
+      "humedadAmbiente": { "danos": true },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "observaciones": "Parte de los pilares ya estaban en mal estado, y ahora est\u00e1n peor. Un 10% del total aprox"
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": {
+        "danos": true,
+        "comentarios": "Ascensores no funcionan"
+      },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda",
+      "otros": "S\u00f3tano aparcamiento"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "1"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosGeneralesEdificio": { "calle": "Albal", "numero": "30" },
+    "datosResponsableZona": { "nombre": "Francisco L\u00f3pez " },
+    "tecnicos": {
+      "nColegiadoTecnico1": "08102",
+      "tecnico1": "Ana Prieto ",
+      "nColegiadoTecnico2": "10129",
+      "tecnico2": "Paula Rosello "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo."
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": {
+        "danos": true,
+        "actuacion": true,
+        "zona": "Elementos horizontales y verticales",
+        "comentarios": "Medio derruido"
+      },
+      "fisuras": { "danos": true, "actuacion": true },
+      "desprendimientos": { "danos": true, "actuacion": true },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": true },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": true,
+        "exterior": true
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": true },
+      "deformacion": {
+        "danos": true,
+        "actuacion": true,
+        "zona": "Elementos horizontales y verticales"
+      },
+      "fisuras": {
+        "danos": true,
+        "actuacion": true,
+        "zona": "Elementos horizontales y verticales"
+      },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Gema Mart\u00ednez Ferrandis",
+      "telefono": "619711042",
+      "email": "Gemmar76@gmail.com",
+      "dni": "44856907F"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "2",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": {
+      "nombre": "Interior y exterior",
+      "observaciones": "No existe fachada. Medio derruido"
+    },
+    "datosResponsableZona": { "nombre": "Carolina " },
+    "tecnicos": {
+      "nColegiadoTecnico1": "14036",
+      "tecnico1": "Adri\u00e1n Ferrando P\u00e9rez ",
+      "nColegiadoTecnico2": "13268",
+      "tecnico2": "Laura Sanchis Guerrero"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": {
+      "nombreEdificio": "Es el mismo edificio que el de al lado. Comparten zagu\u00e1n y escalera "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": true },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "zona": "Zagu\u00e1n ",
+        "comentarios": "Cuadro mojado"
+      },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical",
+        "comentarios": "Rotura de las esquinas de fachada"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": { "calle": "Iglesia ", "numero": "13" },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": {
+      "nombre": "Maria Masia Fern\u00e1ndez ",
+      "telefono": "620755147",
+      "email": "Maria4911@hotmail.com",
+      "dni": "53603094f"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal",
+      "telefono": "645056688"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "14036",
+      "tecnico1": "Adri\u00e1n ferrando perez",
+      "nColegiadoTecnico2": "13268",
+      "tecnico2": "Laura Sanchis guerrero "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false, "zona": "" },
+      "humedadAmbiente": { "danos": true },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true, "comentarios": "Mojado" },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Puerta acceso sin vidrios "
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": { "calle": "Esgl\u00e9sia ", "numero": "17" },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": { "nombre": "No hay nadie" },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal",
+      "telefono": "645056688"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13268",
+      "tecnico1": "Laura Sanchis guerrero ",
+      "nColegiadoTecnico2": "14036",
+      "tecnico2": "Adri\u00e1n ferrando P\u00e9rez "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": false },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosGeneralesEdificio": { "calle": "Esgl\u00e9sia ", "numero": "15" },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "1. Residencial Vivienda"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Unifamiliar entre medianeras",
+      "plantasSobreRasante": "2",
+      "plantasBajoRasante": "0"
+    },
+    "datosRepresentanteEdificio": { "nombre": "Inhabitada" },
+    "tipoInspeccionEdificio": {
+      "nombre": "Exterior",
+      "observaciones": "Inhabitada"
+    },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal ",
+      "telefono": "645056688"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13268",
+      "tecnico1": "Laura Sanchis guerrero ",
+      "nColegiadoTecnico2": "14036",
+      "tecnico2": "Adri\u00e1n Ferrando P\u00e9rez "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true, "comentarios": "Mojado" },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": true, "comentarios": "No funciona " },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Puerta garaje rota"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Francisco Javier Tarazona vernia",
+      "telefono": "647404505",
+      "email": "Alpahu@gmail.com",
+      "dni": "52744931c"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal",
+      "telefono": "645056688"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "6. Aparcamiento"
+    },
+    "datosGeneralesEdificio": { "calle": "Sant jordi", "numero": "1" },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13268",
+      "tecnico1": "Laura Sanchis guerrero ",
+      "nColegiadoTecnico2": "14036",
+      "tecnico2": "Adri\u00e1n ferrando P\u00e9rez "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": {
+        "danos": true,
+        "comentarios": "Bomba rota"
+      },
+      "instalacionesElectricidad": { "danos": true, "comentarios": "Mojado" },
+      "instalacionesGas": { "danos": true },
+      "accesibilidad": {
+        "danos": true,
+        "comentarios": "Foso inundado, no funciona"
+      },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Todos los accesos rotos"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Jos\u00e9 Miguel sarria picazo",
+      "telefono": "682308342",
+      "email": "Jmiguel.jms@hotmail.com",
+      "dni": "22675627l"
+    },
+    "datosGeneralesEdificio": {
+      "calle": "Esgl\u00e9sia sant jordi ",
+      "numero": "3"
+    },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "6",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal",
+      "telefono": "645056688"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13268",
+      "tecnico1": "Laura Sanchis guerrero ",
+      "nColegiadoTecnico2": "14036",
+      "tecnico2": "Adri\u00e1n Ferrando P\u00e9rez "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true, "comentarios": "Mojado" },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": {
+        "danos": true,
+        "comentarios": "Bajo comercial con puertas rotas"
+      },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Kerlyn marin cabrera",
+      "telefono": "631396161",
+      "email": "Kerlyn.marin.km@gmail.com",
+      "dni": "13377747g"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina nadal",
+      "telefono": "645056688"
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "comentarios": "Muro medianero roto y muro zagu\u00e1n tambi\u00e9n "
+      },
+      "humedadAmbiente": { "danos": true },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": false },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": true },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": {
+        "danos": true,
+        "actuacion": false,
+        "zona": "Elemento vertical"
+      },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Jorge Mendoza ribaroja",
+      "telefono": "696435539",
+      "email": "Mendozaribarojajorge@gmail.com",
+      "dni": "53207004t "
+    },
+    "datosGeneralesEdificio": { "calle": "Salvador giner", "numero": "7" },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "4. Comercial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "3",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": {
+      "nombre": "Carolina Nadal",
+      "telefono": "645056688"
+    },
+    "tecnicos": {
+      "nColegiadoTecnico1": "13268",
+      "tecnico1": "Laura Sanchis guerrero ",
+      "nColegiadoTecnico2": "14063",
+      "tecnico2": "Adri\u00e1n Ferrando P\u00e9rez "
+    }
+  },
+  {
+    "datosSotano": {
+      "inundado": false,
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": false, "actuacion": false },
+      "humedadAmbiente": { "danos": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": false },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPlantaBaja": {
+      "deformacion": {
+        "danos": true,
+        "actuacion": true,
+        "zona": "Elementos horizontales y verticales",
+        "comentarios": "Hay un pilar curvado. Revisar. Suelo zagu\u00e1n ha cedido y hundido"
+      },
+      "fisuras": { "danos": true, "actuacion": false },
+      "desprendimientos": { "danos": true, "actuacion": false },
+      "humedadAmbiente": { "danos": true },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": {
+        "danos": true,
+        "zona": "Contadores da\u00f1ados"
+      },
+      "instalacionesGas": { "danos": false },
+      "accesibilidad": { "danos": true, "zona": "Ascensor roto" },
+      "espaciosNoOperativos": {
+        "cocina": false,
+        "banos": false,
+        "dormitorios": false,
+        "estar": false,
+        "exterior": false
+      }
+    },
+    "datosFachada": {
+      "seguridadCiudadana": { "danos": true },
+      "deformacion": { "danos": false, "actuacion": false },
+      "fisuras": { "danos": false, "actuacion": false },
+      "desprendimientos": { "danos": true, "actuacion": false },
+      "instalacionesSaneamientos": { "danos": false },
+      "instalacionesAbastecimientos": { "danos": false },
+      "instalacionesElectricidad": { "danos": true },
+      "instalacionesGas": { "danos": false }
+    },
+    "datosPerimetro": {
+      "aceraPracticable": false,
+      "mobiliarioUrbano": false,
+      "vallado": false
+    },
+    "observaciones": "El alcance de la presente inspecci\u00f3n visual est\u00e1 limitada al momento de su realizaci\u00f3n, a los elementos estructurales observables y al desconocimiento de las propiedades del terreno y sus posibles alteraciones por escorrent\u00edas o la aparici\u00f3n de socavaciones. Se recomienda observar la evoluci\u00f3n del edificio. En el caso de aparici\u00f3n de nuevas anomalias o evoluci\u00f3n r\u00e1pida de las mismas acudir al t\u00e9cnico competente para una nueva inspecci\u00f3n. No forma parte de la inspecci\u00f3n detectar posibles vicios ocultos, ni prevenir causas sobrevenidas. Los elementos objeto de inspecci\u00f3n son los que constan en este modelo de mapeo.",
+    "datosRepresentanteEdificio": {
+      "nombre": "Vicente Mart\u00ednez Cortina",
+      "telefono": "677545501",
+      "email": "Vicente@acuoponiavicentemartinez.com",
+      "dni": "38439159H"
+    },
+    "datosGeneralesEdificio": { "numero": "6" },
+    "usosEdificio": {
+      "usoPlantasAltas": "1. Residencial Vivienda",
+      "usoPlantaBaja": "9. Industrial"
+    },
+    "tipologiaEdificio": {
+      "tipologia": "Bloque entre medianeras",
+      "plantasSobreRasante": "5",
+      "plantasBajoRasante": "0"
+    },
+    "tipoInspeccionEdificio": { "nombre": "Interior y exterior" },
+    "datosResponsableZona": { "nombre": "Carolina" },
+    "tecnicos": {
+      "nColegiadoTecnico1": "14036",
+      "tecnico1": "Adri\u00e1n Ferrando P\u00e9rez ",
+      "nColegiadoTecnico2": "13268",
+      "tecnico2": "Laura Sanchis Guerrero"
+    }
+  }
+]

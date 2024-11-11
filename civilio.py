@@ -57,8 +57,14 @@ def request_data(token, endpoint, method='GET', data=None):
 def get_groups(token):
     return (request_data(token, '/groups') or {}).get('groups', [])
 
-def get_group_tasks(token, group_id):
-    return (request_data(token, f'/groups/{group_id}/tasks') or {}).get('tasks', [])
+def get_group_tasks(token, group_id, page=1, limit=50):
+    print(f"Obteniendo tareas del grupo {group_id} (página {page})...")
+    response = (request_data(token, f'/groups/{group_id}/tasks?limit={limit}&page={page}') or {})
+    tasks, pagination = response.get('tasks', []), response.get('pagination', {})
+    if pagination.get('hasNextPage'):
+        tasks += get_group_tasks(token, group_id, page=page+1)
+    return tasks
+
 
 def filter_tasks(tasks, status):
     return [task for task in tasks if task.get('status') == status]
@@ -81,9 +87,10 @@ def download_forms_results(upload_to_github=True):
     current_datetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     filename_csv = f"{current_datetime}.csv"
     filename_csv = os.path.join(day_data_path, filename_csv)
-    
-    for group in groups:
+    amount = len(groups)
+    for i, group in enumerate(groups):
         group_name = group['name']
+        print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
         tasks = get_group_tasks(token, group['_id'])
         completed_tasks = filter_tasks(tasks, status='FINISHED')
         for completed_task in completed_tasks:
@@ -105,34 +112,34 @@ def download_forms_results(upload_to_github=True):
     print(f"Datos guardados en {filename_csv}")
     
     # Limpiar y mover archivos antiguos antes de subir a GitHub
-    clean_data_directory()
+    # clean_data_directory()
 
     if upload_to_github:
         upload_data(commit_message=f"Subida de datos del día {current_datetime}")
     
 
-def clean_data_directory():
-    os.makedirs(STORAGE_PATH, exist_ok=True) # crear carpeta almacén si no existe
+# def clean_data_directory():
+#     os.makedirs(STORAGE_PATH, exist_ok=True) # crear carpeta almacén si no existe
     
-    # listar archivos en data
-    all_files = []
-    for root, _, files in os.walk(DATA_PATH):
-        for file in files:
-            if file.endswith('.csv'):
-                all_files.append(os.path.join(root, file))
+#     # listar archivos en data
+#     all_files = []
+#     for root, _, files in os.walk(DATA_PATH):
+#         for file in files:
+#             if file.endswith('.csv'):
+#                 all_files.append(os.path.join(root, file))
 
-    # ordenar por fecha de modificación (los más antiguos primero)
-    all_files.sort(key=lambda x: os.path.getmtime(x))
+#     # ordenar por fecha de modificación (los más antiguos primero)
+#     all_files.sort(key=lambda x: os.path.getmtime(x))
 
-    # Mover archivos antiguos a `storage`, manteniendo solo los últimos 10
-    if len(all_files) > 10:
-        files_to_move = all_files[:-10]
-        for file_path in files_to_move:
-            relative_path = os.path.relpath(file_path, DATA_PATH)
-            storage_file_path = os.path.join(STORAGE_PATH, relative_path)
-            os.makedirs(os.path.dirname(storage_file_path), exist_ok=True)
-            os.rename(file_path, storage_file_path)  # Mover el archivo
-            print(f"Archivo movido a storage: {file_path}")
+#     # Mover archivos antiguos a `storage`, manteniendo solo los últimos 10
+#     if len(all_files) > 10:
+#         files_to_move = all_files[:-10]
+#         for file_path in files_to_move:
+#             relative_path = os.path.relpath(file_path, DATA_PATH)
+#             storage_file_path = os.path.join(STORAGE_PATH, relative_path)
+#             os.makedirs(os.path.dirname(storage_file_path), exist_ok=True)
+#             os.rename(file_path, storage_file_path)  # Mover el archivo
+#             print(f"Archivo movido a storage: {file_path}")
 
 def upload_data(commit_message="Subida de datos"):
     # Subir los datos a un repositorio de GitHub
