@@ -7,16 +7,17 @@ import git
 import schedule
 import time
 
-DATA_PATH = 'data'
-STORAGE_PATH = 'storage'
-BASE_URL = 'https://ctav.civilio.net/api'
-USERNAME = 'jcarot@eio.upv.es'
-PASSWORD = '123456789'
+DATA_PATH = "data"
+STORAGE_PATH = "storage"
+BASE_URL = "https://ctav.civilio.net/api"
+USERNAME = "jcarot@eio.upv.es"
+PASSWORD = "123456789"
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 repo = git.Repo(repo_path)
 
-def _flatten_json(json_data, prefix=''):
+
+def _flatten_json(json_data, prefix=""):
     items = {}
     for k, v in json_data.items():
         new_key = f"{prefix}.{k}" if prefix else k
@@ -28,24 +29,20 @@ def _flatten_json(json_data, prefix=''):
 
 
 def get_token():
-    url = BASE_URL + '/auth/login'
-    data = {
-        'email': USERNAME,
-        'password': PASSWORD
-    }
+    url = BASE_URL + "/auth/login"
+    data = {"email": USERNAME, "password": PASSWORD}
     response = requests.post(url, data=data)
     try:
         response.raise_for_status()
-        return response.json().get('accessToken')
+        return response.json().get("accessToken")
     except requests.exceptions.HTTPError as e:
         print(e)
         return None
-    
-def request_data(token, endpoint, method='GET', data=None):
+
+
+def request_data(token, endpoint, method="GET", data=None):
     url = BASE_URL + endpoint
-    headers = {
-        'Authorization': 'Bearer ' + token
-    }
+    headers = {"Authorization": "Bearer " + token}
     response = requests.request(method, url, headers=headers, data=data)
     try:
         response.raise_for_status()
@@ -53,24 +50,29 @@ def request_data(token, endpoint, method='GET', data=None):
     except requests.exceptions.HTTPError as e:
         print(e)
         return None
-    
+
+
 def get_groups(token):
-    return (request_data(token, '/groups') or {}).get('groups', [])
+    return (request_data(token, "/groups") or {}).get("groups", [])
+
 
 def get_group_tasks(token, group_id, page=1, limit=50):
     print(f"Obteniendo tareas del grupo {group_id} (página {page})...")
-    response = (request_data(token, f'/groups/{group_id}/tasks?limit={limit}&page={page}') or {})
-    tasks, pagination = response.get('tasks', []), response.get('pagination', {})
-    if pagination.get('hasNextPage'):
-        tasks += get_group_tasks(token, group_id, page=page+1)
+    response = (
+        request_data(token, f"/groups/{group_id}/tasks?limit={limit}&page={page}") or {}
+    )
+    tasks, pagination = response.get("tasks", []), response.get("pagination", {})
+    if pagination.get("hasNextPage"):
+        tasks += get_group_tasks(token, group_id, page=page + 1)
     return tasks
 
 
 def filter_tasks(tasks, status):
-    return [task for task in tasks if task.get('status') == status]
+    return [task for task in tasks if task.get("status") == status]
 
 
-#region Funciones principales compuestas (Descargar formularios)
+# region Funciones principales compuestas (Descargar formularios)
+
 
 def download_forms_results(upload_to_github=True):
     print("Descargando datos...")
@@ -89,38 +91,65 @@ def download_forms_results(upload_to_github=True):
     filename_csv = os.path.join(day_data_path, filename_csv)
     amount = len(groups)
     for i, group in enumerate(groups):
-        group_name = group['name']
+        group_name = group["name"]
         print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
-        tasks = get_group_tasks(token, group['_id'])
-        completed_tasks = filter_tasks(tasks, status='FINISHED')
+        tasks = get_group_tasks(token, group["_id"])
+        completed_tasks = filter_tasks(tasks, status="FINISHED")
         for completed_task in completed_tasks:
-            stringJson = completed_task.get('formData')
+            task_data = {
+                "nombre_grupo": group_name,
+                "_id": completed_task.get("_id"),
+                "groupId": completed_task.get("groupId"),
+                "missionId": completed_task.get("missionId"),
+                "userId": completed_task.get("userId"),
+                "layerId": completed_task.get("layerId"),
+                "featureId": completed_task.get("featureId"),
+                "status": completed_task.get("status"),
+                "result": completed_task.get("result"),
+                "statusChangedAt": completed_task.get("statusChangedAt"),
+                "resultChangedAt": completed_task.get("resultChangedAt"),
+                "formChangedAt": completed_task.get("formChangedAt"),
+                "createdAt": completed_task.get("createdAt"),
+            }
+            stringJson = completed_task.get("formData")
             if not stringJson:
-                print(f"El formulario de la tarea {completed_task['_id']} no tiene datos")
+                print(
+                    f"El formulario de la tarea {completed_task['_id']} no tiene datos"
+                )
                 continue
             json_data = json.loads(stringJson)
-            flattened_data = _flatten_json(json_data)
-            flattened_data['nombre_grupo'] = group_name
-            all_data.append(flattened_data)
+            flattened_formData = _flatten_json(json_data)
+            flattened_formData["nombre_grupo"] = group_name
+
+            #Extraer la información de `feature` y `properties`
+            feature = completed_task.get('feature', {})
+            
+            # Aplanar las propiedades de `properties` dentro de `feature`
+            properties = feature.get('properties', {})
+            flattened_properties = _flatten_json(properties)
+
+            # Combinar toda la información en un solo diccionario
+            combined_data = {**task_data, **flattened_formData, **flattened_properties}
+            all_data.append(combined_data)
 
     df = pd.DataFrame(all_data)
     # Reordenar las columnas para que 'nombre_grupo' sea la primera
-    columns = ['nombre_grupo'] + [col for col in df.columns if col != 'nombre_grupo']
+    columns = ["nombre_grupo"] + [col for col in df.columns if col != "nombre_grupo"]
     df = df[columns]
 
     df.to_csv(filename_csv, index=False)
     print(f"Datos guardados en {filename_csv}")
-    
+
     # Limpiar y mover archivos antiguos antes de subir a GitHub
     # clean_data_directory()
 
     if upload_to_github:
         upload_data(commit_message=f"Subida de datos del día {current_datetime}")
-    
+
 
 # def clean_data_directory():
 #     os.makedirs(STORAGE_PATH, exist_ok=True) # crear carpeta almacén si no existe
-    
+
 #     # listar archivos en data
 #     all_files = []
 #     for root, _, files in os.walk(DATA_PATH):
@@ -141,35 +170,38 @@ def download_forms_results(upload_to_github=True):
 #             os.rename(file_path, storage_file_path)  # Mover el archivo
 #             print(f"Archivo movido a storage: {file_path}")
 
+
 def upload_data(commit_message="Subida de datos"):
     # Subir los datos a un repositorio de GitHub
     repo.git.add(A=True)
     repo.index.commit(commit_message)
-    origin = repo.remote(name='origin')
+    origin = repo.remote(name="origin")
     origin.push()
     print("Datos subidos correctamente")
 
+
 def ensure_storage_ignored():
-    gitignore_path = '.gitignore'
+    gitignore_path = ".gitignore"
     if os.path.exists(gitignore_path):
-        with open(gitignore_path, 'r') as f:
+        with open(gitignore_path, "r") as f:
             lines = f.readlines()
         # Verifica si 'storage' ya está en .gitignore
         if any(STORAGE_PATH in line for line in lines):
             return  # Si ya está, no hace nada
     # Si no está en .gitignore, agrégalo
-    with open(gitignore_path, 'a') as f:
-        f.write(f'\n{STORAGE_PATH}\n')
+    with open(gitignore_path, "a") as f:
+        f.write(f"\n{STORAGE_PATH}\n")
 
-#endregion
+
+# endregion
 
 ensure_storage_ignored()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # schedule.every().day.at("17:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
     # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
     # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
-    
+
     # while True:
     #     schedule.run_pending()
     #     time.sleep(1)
