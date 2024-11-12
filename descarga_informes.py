@@ -9,38 +9,8 @@ import os
 import time
 
 token = get_token()
-user_session = {
-    "_id": "672f842b27d61b402286f1e9",
-    "name": "José Miguel Carot Sierra",
-    "email": "jcarot@eio.upv.es",
-    "age": 0,
-    "roles": ["ROLE_COORDINATOR", "ROLE_INSPECTOR"],
-    "accessToken": token,
-    "lastLoginAt": "2024-11-11T18:59:06.149Z",
-    "createdAt": "2024-11-09T15:47:55.648Z",
-    "entity": {
-        "_id": "672f83e327d61b402286f01a",
-        "name": "UPV",
-        "email": "jcarot@eio.upv.es",
-        "phone": "+34 696 79 89 63"
-    },
-    "frontConfig": {
-        "app": {
-            "title": "Civilio -> CTAV",
-            "itemsListLimit": 20
-        },
-        "map": {
-            "center": [39.422775, -0.402108],
-            "zoom": 16,
-            "scrollWheelZoom": True
-        },
-        "disk": {
-            "usageMaxSize": 1024,
-            "usageSize": "2003.91"
-        }
-    }
-}
-
+user_session = json.load(open("private/user.json")) 
+user_session["accessToken"] = token
 
 def login():
     # Convertimos el diccionario a un string JSON
