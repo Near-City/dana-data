@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import base64
-from civilio import *
+from descarga_datos import *
 import json
 import os
 import time
@@ -58,7 +58,7 @@ def download_pdf_in_iframe(driver, filename = "informe.pdf", folder = None):
     # Encuentra el iframe y obtiene su src (URL del Blob)
     iframe = driver.find_element(By.TAG_NAME, "iframe")
     blob_url = iframe.get_attribute("src")
-    time.sleep(3)  # Espera breve antes de ejecutar el JavaScript
+    time.sleep(1)  # Espera breve antes de ejecutar el JavaScript
     # Ejecuta JavaScript para obtener el contenido del Blob como base64
     pdf_data_base64 = driver.execute_script("""
         return fetch(arguments[0])
@@ -86,3 +86,68 @@ def download_pdf_in_iframe(driver, filename = "informe.pdf", folder = None):
 def close_informe(driver):
     close_btn = driver.find_element(By.CLASS_NAME, "btn-close")
     close_btn.click()
+
+def save_log(log, filename="log_informes_descargados.json"):
+    with open(filename, "w") as f:
+        json.dump(log, f)
+
+def load_log(filename="log_informes_descargados.json"):
+    if not os.path.exists(filename):
+        return []
+    with open(filename, "r") as f:
+        return json.load(f)
+
+def download_informes_group(driver, group_id, results=["RED"], base_folder="informes", log=None):
+    time.sleep(5)
+    driver.get(f"https://ctav.civilio.net/missions/{group_id}")
+    tasks = get_group_tasks(token, group_id)  # Una única consulta a la API para obtener todas las tareas
+
+    open_tasks_section(driver)
+    try:
+        for result in results:
+            # Filtrar tareas para el resultado actual y crear la carpeta específica
+            filtered_tasks = filter_tasks(tasks, result=result)
+            folder = os.path.join(base_folder, result)
+            os.makedirs(folder, exist_ok=True)
+
+            amount = len(filtered_tasks)
+            for i, task in enumerate(filtered_tasks):
+                feature = (task.get("feature") or {})
+                ref = feature.get("ref")
+                if log is not None and ref in log:
+                    print(f"({i}/{amount}) Tarea {ref} ya descargada.")
+                    continue
+                print(f"({i}/{amount}) Buscando tarea {ref} en {result}...")
+                search_task(driver, ref)
+                abrir_informe(driver)
+                time.sleep(5)
+                download_pdf_in_iframe(driver, f"{ref}.pdf", folder)
+                close_informe(driver)
+                if log is not None:
+                    log.append(ref) 
+                print(f"Tarea {ref} ({result}) descargada.")
+                time.sleep(1)
+        if log is not None:
+            save_log(log)
+    except Exception as e:
+        print(e)
+        if log is not None:
+            save_log(log)
+        
+        
+
+def download_informes_groups(driver, groups, results=["RED", "BLACK"], base_path="informes", log=None):
+    for group in groups:
+        path = os.path.join(base_path, group["name"])
+        print(path)
+        download_informes_group(driver, group["_id"], results=results, base_folder=path, log=log)
+
+def main():
+    driver = login()
+    log = load_log() # registro de tareas descargadas
+    groups = get_groups(token)
+    download_informes_groups(driver, groups, log=log)
+    driver.quit()
+
+if __name__ == "__main__":
+    main()
