@@ -10,10 +10,8 @@ import time
 DATA_PATH = "data"
 STORAGE_PATH = "storage"
 BASE_URL = "https://ctav.civilio.net/api"
-
-#credenciales = json.load(open("private/credenciales.json"))
-USERNAME = "jcarot@eio.upv.es"#credenciales["username"]
-PASSWORD = '123456789'#credenciales["password"]
+USERNAME = "jcarot@eio.upv.es"
+PASSWORD = "123456789"
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 repo = git.Repo(repo_path)
@@ -54,12 +52,9 @@ def request_data(token, endpoint, method="GET", data=None):
         return None
 
 
-def get_groups(token, page=1, limit=30):
-    response = (request_data(token, f"/groups?limit={limit}&page={page}") or {})
-    groups, pagination = response.get("groups", []), response.get("pagination", {})
-    if pagination.get("hasNextPage"):
-        groups += get_groups(token, page=page + 1)
-    return groups
+def get_groups(token):
+    return (request_data(token, "/groups") or {}).get("groups", [])
+
 
 def get_group_tasks(token, group_id, page=1, limit=50):
     print(f"Obteniendo tareas del grupo {group_id} (página {page})...")
@@ -72,8 +67,9 @@ def get_group_tasks(token, group_id, page=1, limit=50):
     return tasks
 
 
-def filter_tasks(tasks, status=None, result=None):
-    return [task for task in tasks if (status is None or task.get("status") == status) and (result is None or task.get("result") == result)]
+def filter_tasks(tasks, status):
+    return [task for task in tasks if task.get("status") == status]
+
 
 # region Funciones principales compuestas (Descargar formularios)
 
@@ -180,7 +176,6 @@ def upload_data(commit_message="Subida de datos"):
     repo.git.add(A=True)
     repo.index.commit(commit_message)
     origin = repo.remote(name="origin")
-    origin.pull() # Actualizar el repositorio remoto
     origin.push()
     print("Datos subidos correctamente")
 
@@ -203,11 +198,11 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    #schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    #os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    #os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    #while True:
-    #    schedule.run_pending()
-    #    time.sleep(1)
-    download_forms_results()  # Descargar los datos ahora
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+    # download_forms_results()  # Descargar los datos ahora
