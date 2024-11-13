@@ -1,4 +1,8 @@
 pandas
 schedule
+<<<<<<< HEAD
+gitpython
+=======
 gitpython
 selenium
+>>>>>>> origin/master
