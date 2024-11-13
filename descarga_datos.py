@@ -11,9 +11,9 @@ DATA_PATH = "data"
 STORAGE_PATH = "storage"
 BASE_URL = "https://ctav.civilio.net/api"
 
-credenciales = json.load(open("private/credenciales.json"))
-USERNAME = credenciales["username"]
-PASSWORD = credenciales["password"]
+#credenciales = json.load(open("private/credenciales.json"))
+USERNAME = "jcarot@eio.upv.es"#credenciales["username"]
+PASSWORD = '123456789'#credenciales["password"]
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 repo = git.Repo(repo_path)
@@ -202,11 +202,11 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    #schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    #os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    #os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-    # download_forms_results()  # Descargar los datos ahora
+    #while True:
+    #    schedule.run_pending()
+    #    time.sleep(1)
+    download_forms_results()  # Descargar los datos ahora
