@@ -180,6 +180,7 @@ def upload_data(commit_message="Subida de datos"):
     repo.git.add(A=True)
     repo.index.commit(commit_message)
     origin = repo.remote(name="origin")
+    origin.pull() # Actualizar el repositorio remoto
     origin.push()
     print("Datos subidos correctamente")
 
