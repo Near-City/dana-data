@@ -75,7 +75,118 @@ def get_group_tasks(token, group_id, page=1, limit=50):
 def filter_tasks(tasks, status=None, result=None):
     return [task for task in tasks if (status is None or task.get("status") == status) and (result is None or task.get("result") == result)]
 
+# region Transformación datos
+import numpy as np
+
+def transformar_df(df):
+    # Reemplazo de valores booleanos por enteros
+    df = df.replace({False: 0, True: 1})
+    
+    # Nuevas variables - Sótano
+    df["danos_Sotano"] = df[[
+        "datosSotano.deformacion.danos", 
+        "datosSotano.fisuras.danos", 
+        "datosSotano.desprendimientos.danos", 
+        "datosSotano.humedadAmbiente.danos",
+        "datosSotano.instalacionesSaneamientos.danos",
+        "datosSotano.instalacionesAbastecimientos.danos",
+        "datosSotano.instalacionesElectricidad.danos",
+        "datosSotano.instalacionesGas.danos"
+    ]].sum(axis=1)
+
+    df["urgente_Sotano"] = df[[
+        "datosSotano.deformacion.actuacion", 
+        "datosSotano.fisuras.actuacion", 
+        "datosSotano.desprendimientos.actuacion"
+    ]].sum(axis=1)
+    
+    # Nuevas variables - Planta Baja
+    df["danos_PlantaBaja"] = df[[
+        "datosPlantaBaja.deformacion.danos", 
+        "datosPlantaBaja.fisuras.danos", 
+        "datosPlantaBaja.accesibilidad.danos",
+        "datosPlantaBaja.desprendimientos.danos", 
+        "datosPlantaBaja.humedadAmbiente.danos",
+        "datosPlantaBaja.instalacionesSaneamientos.danos",
+        "datosPlantaBaja.instalacionesAbastecimientos.danos",
+        "datosPlantaBaja.instalacionesElectricidad.danos",
+        "datosPlantaBaja.instalacionesGas.danos"
+    ]].sum(axis=1)
+
+    df["urgente_PlantaBaja"] = df[[
+        "datosPlantaBaja.deformacion.actuacion", 
+        "datosPlantaBaja.fisuras.actuacion", 
+        "datosPlantaBaja.desprendimientos.actuacion"
+    ]].sum(axis=1)
+
+    # Nuevas variables - Fachada
+    df["danos_Fachada"] = df[[
+        "datosFachada.seguridadCiudadana.danos",
+        "datosFachada.deformacion.danos",
+        "datosFachada.fisuras.danos",
+        "datosFachada.fisuras.actuacion",
+        "datosFachada.desprendimientos.danos",
+        "datosFachada.instalacionesSaneamientos.danos",
+        "datosFachada.instalacionesAbastecimientos.danos",
+        "datosFachada.instalacionesElectricidad.danos",
+        "datosFachada.instalacionesGas.danos"
+    ]].sum(axis=1)
+
+    df["urgente_Fachada"] = df[[
+        "datosFachada.deformacion.actuacion",
+        "datosFachada.fisuras.actuacion",
+        "datosFachada.desprendimientos.actuacion"
+    ]].sum(axis=1)
+
+    # Nuevas variables - Perímetro
+    df["danos_Perimetro"] = df[[
+        "datosPerimetro.aceraPracticable", 
+        "datosPerimetro.mobiliarioUrbano", 
+        "datosPerimetro.vallado"
+    ]].sum(axis=1)
+
+    # Nuevas variables - Operatividad
+    df["no_Operativo"] = df[[
+        "datosPlantaBaja.espaciosNoOperativos.cocina",
+        "datosPlantaBaja.espaciosNoOperativos.banos",
+        "datosPlantaBaja.espaciosNoOperativos.dormitorios",
+        "datosPlantaBaja.espaciosNoOperativos.estar",
+        "datosPlantaBaja.espaciosNoOperativos.exterior"
+    ]].sum(axis=1)
+
+    # Nuevas variables - Urgencia
+    df["DEF_Urgente"] = df[[
+        "datosSotano.deformacion.actuacion", 
+        "datosPlantaBaja.deformacion.actuacion",
+        "datosFachada.deformacion.actuacion"
+    ]].sum(axis=1)
+    df['DEF_dicotomico'] = np.where(df['DEF_Urgente'] == 0, 0, 1)
+
+    df["FIS_Urgente"] = df[[
+        "datosSotano.fisuras.actuacion", 
+        "datosPlantaBaja.fisuras.actuacion",
+        "datosFachada.fisuras.actuacion"
+    ]].sum(axis=1)
+    df['FIS_dicotomico'] = np.where(df['FIS_Urgente'] == 0, 0, 1)
+
+    df["DES_Urgente"] = df[[
+        "datosSotano.desprendimientos.actuacion", 
+        "datosPlantaBaja.desprendimientos.actuacion",
+        "datosFachada.desprendimientos.actuacion"
+    ]].sum(axis=1)
+    df['DES_dicotomico'] = np.where(df['DES_Urgente'] == 0, 0, 1)
+
+    # Nuevas variables - Totales
+    df["danos_Total"] = df["danos_PlantaBaja"] + df["danos_Sotano"] + df["danos_Fachada"]
+    df["urgente_Total"] = df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]
+    df["IGD"] = df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]
+    
+    return df
+
+#endregion
+
 # region Funciones principales compuestas (Descargar formularios)
+
 
 
 def download_forms_results(upload_to_github=True):
@@ -140,8 +251,9 @@ def download_forms_results(upload_to_github=True):
     # Reordenar las columnas para que 'nombre_grupo' sea la primera
     columns = ["nombre_grupo"] + [col for col in df.columns if col != "nombre_grupo"]
     df = df[columns]
-
+    transformed_df = transformar_df(df)
     df.to_csv(filename_csv, index=False)
+    transformed_df.to_csv(filename_csv.replace('.csv', '_transformed.csv'), index=False)
     print(f"Datos guardados en {filename_csv}")
 
     # Limpiar y mover archivos antiguos antes de subir a GitHub
@@ -203,11 +315,11 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    # schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
-    # download_forms_results()  # Descargar los datos ahora
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
+    download_forms_results()  # Descargar los datos ahora
