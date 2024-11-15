@@ -206,7 +206,7 @@ def download_forms_results(upload_to_github=True):
     print("Descargando datos...")
     token = get_token()
     all_data = []
-    groups = get_groups(token)
+    groups = [get_groups(token)[0]]
 
     # Crear una carpeta con la fecha actual si no existe (AGRUPACIÓN DE CARPETAS POR DÍA)
     current_day = datetime.now().strftime("%Y-%m-%d")
@@ -223,8 +223,6 @@ def download_forms_results(upload_to_github=True):
         group_name = group["name"]
         print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
         tasks = get_group_tasks_with_limit(token, group["_id"])
-        with open(f"{day_data_path}/{group_name}.json", "w") as f:
-            json.dump(tasks, f)
         completed_tasks = filter_tasks(tasks, status="FINISHED")
         amount_tasks += len(completed_tasks)
         for completed_task in completed_tasks:
@@ -242,16 +240,19 @@ def download_forms_results(upload_to_github=True):
                 "resultChangedAt": completed_task.get("resultChangedAt"),
                 "formChangedAt": completed_task.get("formChangedAt"),
                 "createdAt": completed_task.get("createdAt"),
+                "hasForm": True,
             }
             stringJson = completed_task.get("formData")
+            flattened_formData = {}
             if not stringJson:
                 print(
-                    f"El formulario de la tarea {completed_task['_id']} no tiene datos"
+                    f"El formulario de la tarea {completed_task['_id']} del grupo {group_name} no tiene datos"
                 )
-                continue
-            json_data = json.loads(stringJson)
-            flattened_formData = _flatten_json(json_data)
-            flattened_formData["nombre_grupo"] = group_name
+                task_data["hasForm"] = False
+            else:
+                json_data = json.loads(stringJson)
+                flattened_formData = _flatten_json(json_data)
+            task_data["nombre_grupo"] = group_name
 
             #Extraer la información de `feature` y `properties`
             feature = completed_task.get('feature', {})
@@ -335,13 +336,13 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    # schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
 
-    # download_forms_results()
+    download_forms_results(upload_to_github=True)
 
