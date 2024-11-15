@@ -205,11 +205,13 @@ def download_forms_results(upload_to_github=True):
     filename_csv = f"{current_datetime}.csv"
     filename_csv = os.path.join(day_data_path, filename_csv)
     amount = len(groups)
+    amount_tasks = 0
     for i, group in enumerate(groups):
         group_name = group["name"]
         print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
         tasks = get_group_tasks(token, group["_id"])
         completed_tasks = filter_tasks(tasks, status="FINISHED")
+        amount_tasks += len(completed_tasks)
         for completed_task in completed_tasks:
             task_data = {
                 "nombre_grupo": group_name,
@@ -261,6 +263,8 @@ def download_forms_results(upload_to_github=True):
 
     if upload_to_github:
         upload_data(commit_message=f"Subida de datos del día {current_datetime}")
+
+    print(f"Descarga finalizada. {amount_tasks} tareas completadas.")
 
 
 # def clean_data_directory():
@@ -315,11 +319,12 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    # schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
+    download_forms_results()
 
