@@ -194,6 +194,9 @@ def transformar_df(df):
     df_fecha_aux = df["fechaUltima"].str.slice(stop=10).str.split("-", n=2, expand=True)
     df["fechaUltima"] = df_fecha_aux[2] +"-" + df_fecha_aux[1] +"-" + df_fecha_aux[0]
 
+    # Modificacion datos tipo entero
+    df["numero"] = df["numero"].astype(int)
+    df["viviendas"] = df["viviendas"].fillna(0).astype(int)    
     return df
 
 #endregion
