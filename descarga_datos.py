@@ -100,6 +100,8 @@ def transformar_df(df):
         "datosSotano.desprendimientos.actuacion"
     ]].sum(axis=1)
     
+    df['urgente_Sotano_dicotomico'] = np.where(df['urgente_Sotano'] == 0, 0, 1)
+    
     # Nuevas variables - Planta Baja
     df["danos_PlantaBaja"] = df[[
         "datosPlantaBaja.deformacion.danos", 
@@ -118,6 +120,8 @@ def transformar_df(df):
         "datosPlantaBaja.fisuras.actuacion", 
         "datosPlantaBaja.desprendimientos.actuacion"
     ]].sum(axis=1)
+    
+    df['urgente_PlantaBaja_dicotomico'] = np.where(df['urgente_PlantaBaja'] == 0, 0, 1)
 
     # Nuevas variables - Fachada
     df["danos_Fachada"] = df[[
@@ -137,6 +141,8 @@ def transformar_df(df):
         "datosFachada.fisuras.actuacion",
         "datosFachada.desprendimientos.actuacion"
     ]].sum(axis=1)
+    
+    df['urgente_Fachada_dicotomico'] = np.where(df['urgente_Fachada'] == 0, 0, 1)
 
     # Nuevas variables - Perímetro
     df["danos_Perimetro"] = df[[
@@ -181,6 +187,11 @@ def transformar_df(df):
     df["urgente_Total"] = df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]
     df["IGD"] = df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]
     
+    # Nuevas variables - Fecha más actualizada
+    df["fechaUltima"] = df[["statusChangedAt", "resultChangedAt"]].max(axis=1)
+    df_fecha_aux = df["fechaUltima"].str.slice(stop=10).str.split("-", n=2, expand=True)
+    df["fechaUltima"] = df_fecha_aux[2] +"-" + df_fecha_aux[1] +"-" + df_fecha_aux[0]
+
     return df
 
 #endregion
@@ -327,4 +338,6 @@ if __name__ == "__main__":
     #     schedule.run_pending()
     #     time.sleep(1)
     download_forms_results()
+
+    #download_forms_results()
 
