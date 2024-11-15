@@ -11,9 +11,10 @@ DATA_PATH = "data"
 STORAGE_PATH = "storage"
 BASE_URL = "https://ctav.civilio.net/api"
 
-#credenciales = json.load(open("private/credenciales.json"))
-USERNAME = "jcarot@eio.upv.es"#credenciales["username"]
-PASSWORD = '123456789'#credenciales["password"]
+credenciales = json.load(open("private/credenciales.json"))
+USERNAME = credenciales["username"]
+PASSWORD = credenciales["password"]
+
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 repo = git.Repo(repo_path)
@@ -61,19 +62,20 @@ def get_groups(token, page=1, limit=30):
         groups += get_groups(token, page=page + 1)
     return groups
 
-def get_group_tasks(token, group_id, page=1, limit=50):
-    print(f"Obteniendo tareas del grupo {group_id} (página {page})...")
+def get_group_tasks_with_limit(token, group_id):
+    print(f"Obteniendo tareas del grupo {group_id}")
     response = (
-        request_data(token, f"/groups/{group_id}/tasks?limit={limit}&page={page}") or {}
+        request_data(token, f"/groups/{group_id}/tasks") or {}
     )
     tasks, pagination = response.get("tasks", []), response.get("pagination", {})
     if pagination.get("hasNextPage"):
-        tasks += get_group_tasks(token, group_id, page=page + 1)
+        tasks += get_group_tasks_with_limit(token, group_id)
     return tasks
 
 
+
 def filter_tasks(tasks, status=None, result=None):
-    return [task for task in tasks if (status is None or task.get("status") == status) and (result is None or task.get("result") == result)]
+    return [task for task in tasks if (status is None or task.get("_status") == status or task.get("status") == status) and (result is None or task.get("_result") == result or task.get("result") == result)]
 
 # region Transformación datos
 import numpy as np
@@ -220,7 +222,9 @@ def download_forms_results(upload_to_github=True):
     for i, group in enumerate(groups):
         group_name = group["name"]
         print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
-        tasks = get_group_tasks(token, group["_id"])
+        tasks = get_group_tasks_with_limit(token, group["_id"])
+        with open(f"{day_data_path}/{group_name}.json", "w") as f:
+            json.dump(tasks, f)
         completed_tasks = filter_tasks(tasks, status="FINISHED")
         amount_tasks += len(completed_tasks)
         for completed_task in completed_tasks:
@@ -278,6 +282,7 @@ def download_forms_results(upload_to_github=True):
     print(f"Descarga finalizada. {amount_tasks} tareas completadas.")
 
 
+
 # def clean_data_directory():
 #     os.makedirs(STORAGE_PATH, exist_ok=True) # crear carpeta almacén si no existe
 
@@ -330,14 +335,13 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    # schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
-    download_forms_results()
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
     #download_forms_results()
 
