@@ -147,8 +147,8 @@ def download_forms_results(upload_to_github=True):
         tasks = get_group_tasks_with_limit(token, group["_id"])
         completed_tasks = filter_tasks(tasks, status="FINISHED") # Tareas completadas
         pending_tasks = filter_tasks(tasks, status="PENDING") # Tareas pendientes
-        pending_tasks = filter_tasks(tasks, status="IN PROGRESS") # Tareas pendientes
-        tasks_of_interest = completed_tasks + pending_tasks
+        in_progress_tasks = filter_tasks(tasks, status="IN PROGRESS") # Tareas pendientes
+        tasks_of_interest = completed_tasks + pending_tasks + in_progress_tasks
         amount_tasks += len(completed_tasks)
         for completed_task in tasks_of_interest:
             task_data = {
