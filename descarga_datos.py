@@ -82,8 +82,6 @@ import numpy as np
 
 import numpy as np
 
-import numpy as np
-
 def transformar_df(df):
     # Reemplazo de valores booleanos por enteros
     df = df.replace({False: 0, True: 1})
@@ -98,15 +96,15 @@ def transformar_df(df):
         "datosSotano.instalacionesAbastecimientos.danos",
         "datosSotano.instalacionesElectricidad.danos",
         "datosSotano.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_Sotano"] = df[[
         "datosSotano.deformacion.actuacion", 
         "datosSotano.fisuras.actuacion", 
         "datosSotano.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_Sotano_dicotomico'] = np.where(df['urgente_Sotano'] == 0, 0, 1)
+    df['urgente_Sotano_dicotomico'] = np.where(df['urgente_Sotano'] == 0, 0, 1).astype(int)
     
     # Nuevas variables - Planta Baja
     df["danos_PlantaBaja"] = df[[
@@ -119,15 +117,15 @@ def transformar_df(df):
         "datosPlantaBaja.instalacionesAbastecimientos.danos",
         "datosPlantaBaja.instalacionesElectricidad.danos",
         "datosPlantaBaja.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_PlantaBaja"] = df[[
         "datosPlantaBaja.deformacion.actuacion", 
         "datosPlantaBaja.fisuras.actuacion", 
         "datosPlantaBaja.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_PlantaBaja_dicotomico'] = np.where(df['urgente_PlantaBaja'] == 0, 0, 1)
+    df['urgente_PlantaBaja_dicotomico'] = np.where(df['urgente_PlantaBaja'] == 0, 0, 1).astype(int)
 
     # Nuevas variables - Fachada
     df["danos_Fachada"] = df[[
@@ -140,22 +138,22 @@ def transformar_df(df):
         "datosFachada.instalacionesAbastecimientos.danos",
         "datosFachada.instalacionesElectricidad.danos",
         "datosFachada.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_Fachada"] = df[[
         "datosFachada.deformacion.actuacion",
         "datosFachada.fisuras.actuacion",
         "datosFachada.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_Fachada_dicotomico'] = np.where(df['urgente_Fachada'] == 0, 0, 1)
+    df['urgente_Fachada_dicotomico'] = np.where(df['urgente_Fachada'] == 0, 0, 1).astype(int)
 
     # Nuevas variables - Perímetro
     df["danos_Perimetro"] = df[[
         "datosPerimetro.aceraPracticable", 
         "datosPerimetro.mobiliarioUrbano", 
         "datosPerimetro.vallado"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     # Nuevas variables - Operatividad
     df["no_Operativo"] = df[[
@@ -164,49 +162,23 @@ def transformar_df(df):
         "datosPlantaBaja.espaciosNoOperativos.dormitorios",
         "datosPlantaBaja.espaciosNoOperativos.estar",
         "datosPlantaBaja.espaciosNoOperativos.exterior"
-    ]].sum(axis=1)
-
-    # Nuevas variables - Urgencia
-    df["DEF_Urgente"] = df[[
-        "datosSotano.deformacion.actuacion", 
-        "datosPlantaBaja.deformacion.actuacion",
-        "datosFachada.deformacion.actuacion"
-    ]].sum(axis=1)
-    df['DEF_dicotomico'] = np.where(df['DEF_Urgente'] == 0, 0, 1)
-
-    df["FIS_Urgente"] = df[[
-        "datosSotano.fisuras.actuacion", 
-        "datosPlantaBaja.fisuras.actuacion",
-        "datosFachada.fisuras.actuacion"
-    ]].sum(axis=1)
-    df['FIS_dicotomico'] = np.where(df['FIS_Urgente'] == 0, 0, 1)
-
-    df["DES_Urgente"] = df[[
-        "datosSotano.desprendimientos.actuacion", 
-        "datosPlantaBaja.desprendimientos.actuacion",
-        "datosFachada.desprendimientos.actuacion"
-    ]].sum(axis=1)
-    df['DES_dicotomico'] = np.where(df['DES_Urgente'] == 0, 0, 1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     # Nuevas variables - Totales
-    df["danos_Total"] = df["danos_PlantaBaja"] + df["danos_Sotano"] + df["danos_Fachada"]
-    df["urgente_Total"] = df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]
-    df["IGD"] = df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]
-    
-    # Nuevas variables - Fecha más actualizada
-    df["fechaUltima"] = df[["statusChangedAt", "resultChangedAt"]].max(axis=1)
-    df_fecha_aux = df["fechaUltima"].str.slice(stop=10).str.split("-", n=2, expand=True)
-    df["fechaUltima"] = df_fecha_aux[2] + "-" + df_fecha_aux[1] + "-" + df_fecha_aux[0]
+    df["danos_Total"] = (df["danos_PlantaBaja"] + df["danos_Sotano"] + df["danos_Fachada"]).fillna(0).astype(int)
+    df["urgente_Total"] = (df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]).fillna(0).astype(int)
+    df["IGD"] = (df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]).fillna(0).astype(int)
 
-    # Manejo de NaN e infinitos antes de convertir a enteros
+    # Conversiones explícitas de otros enteros
     df["numero"] = df["numero"].fillna(0).replace([np.inf, -np.inf], 0).astype(int)
     df["viviendas"] = df["viviendas"].fillna(0).replace([np.inf, -np.inf], 0).astype(int)
 
-    # Asegurar que no haya NaN o infinitos en el DataFrame
+    # Asegurarse de no tener valores inválidos
     df = df.replace([np.inf, -np.inf], 0)
     df = df.fillna(0)
-    
+
     return df
+
 
 
 
