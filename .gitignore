@@ -7,3 +7,5 @@ private/*
 descarga_informes.ipynb
 test.ipynb
 >>>>>>> origin/master
+.DS_Store
+*.sb-*
