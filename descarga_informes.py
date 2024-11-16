@@ -100,7 +100,7 @@ def load_log(filename="log_informes_descargados.json"):
 def download_informes_group(driver, group_id, results=["RED"], base_folder="informes", log=None):
     time.sleep(5)
     driver.get(f"https://ctav.civilio.net/missions/{group_id}")
-    tasks = get_group_tasks(token, group_id)  # Una única consulta a la API para obtener todas las tareas
+    tasks = get_group_tasks_with_limit(token, group_id)  # Una única consulta a la API para obtener todas las tareas
 
     open_tasks_section(driver)
     try:
