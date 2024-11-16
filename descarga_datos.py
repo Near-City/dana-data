@@ -11,9 +11,10 @@ DATA_PATH = "data"
 STORAGE_PATH = "storage"
 BASE_URL = "https://ctav.civilio.net/api"
 
-#credenciales = json.load(open("private/credenciales.json"))
-USERNAME = "jcarot@eio.upv.es"#credenciales["username"]
-PASSWORD = '123456789'#credenciales["password"]
+credenciales = json.load(open("private/credenciales.json"))
+USERNAME = credenciales["username"]
+PASSWORD = credenciales["password"]
+
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 repo = git.Repo(repo_path)
@@ -61,21 +62,24 @@ def get_groups(token, page=1, limit=30):
         groups += get_groups(token, page=page + 1)
     return groups
 
-def get_group_tasks(token, group_id, page=1, limit=50):
-    print(f"Obteniendo tareas del grupo {group_id} (página {page})...")
+def get_group_tasks_with_limit(token, group_id):
+    print(f"Obteniendo tareas del grupo {group_id}")
     response = (
-        request_data(token, f"/groups/{group_id}/tasks?limit={limit}&page={page}") or {}
+        request_data(token, f"/groups/{group_id}/tasks") or {}
     )
     tasks, pagination = response.get("tasks", []), response.get("pagination", {})
     if pagination.get("hasNextPage"):
-        tasks += get_group_tasks(token, group_id, page=page + 1)
+        tasks += get_group_tasks_with_limit(token, group_id)
     return tasks
 
 
+
 def filter_tasks(tasks, status=None, result=None):
-    return [task for task in tasks if (status is None or task.get("status") == status) and (result is None or task.get("result") == result)]
+    return [task for task in tasks if (status is None or task.get("_status") == status or task.get("status") == status) and (result is None or task.get("_result") == result or task.get("result") == result)]
 
 # region Transformación datos
+import numpy as np
+
 import numpy as np
 
 def transformar_df(df):
@@ -92,15 +96,15 @@ def transformar_df(df):
         "datosSotano.instalacionesAbastecimientos.danos",
         "datosSotano.instalacionesElectricidad.danos",
         "datosSotano.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_Sotano"] = df[[
         "datosSotano.deformacion.actuacion", 
         "datosSotano.fisuras.actuacion", 
         "datosSotano.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_Sotano_dicotomico'] = np.where(df['urgente_Sotano'] == 0, 0, 1)
+    df['urgente_Sotano_dicotomico'] = np.where(df['urgente_Sotano'] == 0, 0, 1).astype(int)
     
     # Nuevas variables - Planta Baja
     df["danos_PlantaBaja"] = df[[
@@ -113,15 +117,15 @@ def transformar_df(df):
         "datosPlantaBaja.instalacionesAbastecimientos.danos",
         "datosPlantaBaja.instalacionesElectricidad.danos",
         "datosPlantaBaja.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_PlantaBaja"] = df[[
         "datosPlantaBaja.deformacion.actuacion", 
         "datosPlantaBaja.fisuras.actuacion", 
         "datosPlantaBaja.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_PlantaBaja_dicotomico'] = np.where(df['urgente_PlantaBaja'] == 0, 0, 1)
+    df['urgente_PlantaBaja_dicotomico'] = np.where(df['urgente_PlantaBaja'] == 0, 0, 1).astype(int)
 
     # Nuevas variables - Fachada
     df["danos_Fachada"] = df[[
@@ -134,22 +138,22 @@ def transformar_df(df):
         "datosFachada.instalacionesAbastecimientos.danos",
         "datosFachada.instalacionesElectricidad.danos",
         "datosFachada.instalacionesGas.danos"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     df["urgente_Fachada"] = df[[
         "datosFachada.deformacion.actuacion",
         "datosFachada.fisuras.actuacion",
         "datosFachada.desprendimientos.actuacion"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
     
-    df['urgente_Fachada_dicotomico'] = np.where(df['urgente_Fachada'] == 0, 0, 1)
+    df['urgente_Fachada_dicotomico'] = np.where(df['urgente_Fachada'] == 0, 0, 1).astype(int)
 
     # Nuevas variables - Perímetro
     df["danos_Perimetro"] = df[[
         "datosPerimetro.aceraPracticable", 
         "datosPerimetro.mobiliarioUrbano", 
         "datosPerimetro.vallado"
-    ]].sum(axis=1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     # Nuevas variables - Operatividad
     df["no_Operativo"] = df[[
@@ -158,41 +162,25 @@ def transformar_df(df):
         "datosPlantaBaja.espaciosNoOperativos.dormitorios",
         "datosPlantaBaja.espaciosNoOperativos.estar",
         "datosPlantaBaja.espaciosNoOperativos.exterior"
-    ]].sum(axis=1)
-
-    # Nuevas variables - Urgencia
-    df["DEF_Urgente"] = df[[
-        "datosSotano.deformacion.actuacion", 
-        "datosPlantaBaja.deformacion.actuacion",
-        "datosFachada.deformacion.actuacion"
-    ]].sum(axis=1)
-    df['DEF_dicotomico'] = np.where(df['DEF_Urgente'] == 0, 0, 1)
-
-    df["FIS_Urgente"] = df[[
-        "datosSotano.fisuras.actuacion", 
-        "datosPlantaBaja.fisuras.actuacion",
-        "datosFachada.fisuras.actuacion"
-    ]].sum(axis=1)
-    df['FIS_dicotomico'] = np.where(df['FIS_Urgente'] == 0, 0, 1)
-
-    df["DES_Urgente"] = df[[
-        "datosSotano.desprendimientos.actuacion", 
-        "datosPlantaBaja.desprendimientos.actuacion",
-        "datosFachada.desprendimientos.actuacion"
-    ]].sum(axis=1)
-    df['DES_dicotomico'] = np.where(df['DES_Urgente'] == 0, 0, 1)
+    ]].sum(axis=1, min_count=1).fillna(0).astype(int)
 
     # Nuevas variables - Totales
-    df["danos_Total"] = df["danos_PlantaBaja"] + df["danos_Sotano"] + df["danos_Fachada"]
-    df["urgente_Total"] = df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]
-    df["IGD"] = df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]
-    
-    # Nuevas variables - Fecha más actualizada
-    df["fechaUltima"] = df[["statusChangedAt", "resultChangedAt"]].max(axis=1)
-    df_fecha_aux = df["fechaUltima"].str.slice(stop=10).str.split("-", n=2, expand=True)
-    df["fechaUltima"] = df_fecha_aux[2] +"-" + df_fecha_aux[1] +"-" + df_fecha_aux[0]
+    df["danos_Total"] = (df["danos_PlantaBaja"] + df["danos_Sotano"] + df["danos_Fachada"]).fillna(0).astype(int)
+    df["urgente_Total"] = (df["urgente_PlantaBaja"] + df["urgente_Sotano"] + df["urgente_Fachada"]).fillna(0).astype(int)
+    df["IGD"] = (df["danos_Total"] + df["datosSotano.inundado"] + df["no_Operativo"] + df["datosFachada.seguridadCiudadana.danos"]).fillna(0).astype(int)
+
+    # Conversiones explícitas de otros enteros
+    df["numero"] = df["numero"].fillna(0).replace([np.inf, -np.inf], 0).astype(int)
+    df["viviendas"] = df["viviendas"].fillna(0).replace([np.inf, -np.inf], 0).astype(int)
+
+    # Asegurarse de no tener valores inválidos
+    df = df.replace([np.inf, -np.inf], 0)
+    df = df.fillna(0)
 
     return df
+
+
+
 
 #endregion
 
@@ -220,10 +208,13 @@ def download_forms_results(upload_to_github=True):
     for i, group in enumerate(groups):
         group_name = group["name"]
         print(f"{i}/{amount} - Descargando datos del grupo {group_name}...")
-        tasks = get_group_tasks(token, group["_id"])
-        completed_tasks = filter_tasks(tasks, status="FINISHED")
+        tasks = get_group_tasks_with_limit(token, group["_id"])
+        completed_tasks = filter_tasks(tasks, status="FINISHED") # Tareas completadas
+        pending_tasks = filter_tasks(tasks, status="PENDING") # Tareas pendientes
+        in_progress_tasks = filter_tasks(tasks, status="IN PROGRESS") # Tareas pendientes
+        tasks_of_interest = completed_tasks + pending_tasks + in_progress_tasks
         amount_tasks += len(completed_tasks)
-        for completed_task in completed_tasks:
+        for completed_task in tasks_of_interest:
             task_data = {
                 "nombre_grupo": group_name,
                 "_id": completed_task.get("_id"),
@@ -238,16 +229,19 @@ def download_forms_results(upload_to_github=True):
                 "resultChangedAt": completed_task.get("resultChangedAt"),
                 "formChangedAt": completed_task.get("formChangedAt"),
                 "createdAt": completed_task.get("createdAt"),
+                "hasForm": True,
             }
             stringJson = completed_task.get("formData")
+            flattened_formData = {}
             if not stringJson:
                 print(
-                    f"El formulario de la tarea {completed_task['_id']} no tiene datos"
+                    f"El formulario de la tarea {completed_task['_id']} del grupo {group_name} no tiene datos"
                 )
-                continue
-            json_data = json.loads(stringJson)
-            flattened_formData = _flatten_json(json_data)
-            flattened_formData["nombre_grupo"] = group_name
+                task_data["hasForm"] = False
+            else:
+                json_data = json.loads(stringJson)
+                flattened_formData = _flatten_json(json_data)
+            task_data["nombre_grupo"] = group_name
 
             #Extraer la información de `feature` y `properties`
             feature = completed_task.get('feature', {})
@@ -276,6 +270,7 @@ def download_forms_results(upload_to_github=True):
         upload_data(commit_message=f"Subida de datos del día {current_datetime}")
 
     print(f"Descarga finalizada. {amount_tasks} tareas completadas.")
+
 
 
 # def clean_data_directory():
@@ -330,14 +325,13 @@ def ensure_storage_ignored():
 ensure_storage_ignored()
 
 if __name__ == "__main__":
-    # schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
-    # os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
-    # os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
+    schedule.every().day.at("23:00").do(download_forms_results)  # Descargar los datos a las 20:00 cada día
+    os.makedirs(DATA_PATH, exist_ok=True)  # Crear la carpeta 'data' si no existe
+    os.makedirs(STORAGE_PATH, exist_ok=True)  # Crear la carpeta 'storage' si no existe
 
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(1)
-    download_forms_results()
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
-    #download_forms_results()
+    # download_forms_results(upload_to_github=False)
 
