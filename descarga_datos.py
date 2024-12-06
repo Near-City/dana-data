@@ -85,7 +85,7 @@ import numpy as np
 def transformar_df(df):
     # Reemplazo de valores booleanos por enteros
     df = df.replace({False: 0, True: 1})
-    
+    df['datosFachada.cotaAgua'] = df['datosFachada.cotaAgua'].apply(transform_cota_agua)
     # Nuevas variables - Sótano
     df["danos_Sotano"] = df[[
         "datosSotano.deformacion.danos", 
@@ -177,8 +177,44 @@ def transformar_df(df):
     df = df.replace([np.inf, -np.inf], 0)
     df = df.fillna(0)
 
+    df["tecnicos.fechaInspeccion"] = pd.to_datetime(df["tecnicos.fechaInspeccion"], errors="coerce")
+
     return df
 
+
+def transform_cota_agua(value):
+    
+    if type(value) is float: # Es Float
+        value = abs(value)  # Valor absoluto
+        #SI está en un rango de entre 0,5 y 2,35, pasarlo a centimetros: e.g 1,65 -> 165
+        entra = False
+        if value == 1.9:
+            entra = True
+        if 0.5 <= value < 3:
+            if entra:
+                print(value * 100)
+            return value * 100
+        
+        #Si está en un rango de Valores de 3 a 320, se mantienen
+        if 3 <= value <= 320:
+            return value
+        
+        return value
+        
+    value = value.replace(',', '.')  # Cambiar comas por puntos
+    value = value.replace(' ', '')  # Eliminar espacios
+    
+    if '-' in value:  # Si es un rango
+        try:
+            parts = list(map(float, value.split('-')))
+            return transform_cota_agua(sum(parts) / 2)  # Retornar el promedio del rango y aplicar la función
+        except ValueError:
+            return None  
+    else:
+        try:
+            return transform_cota_agua(float(value))  # Convertir a float y aplicar la función
+        except ValueError:
+            return None  
 
 
 
